@@ -1,0 +1,14 @@
+<launch>
+
+    <include file="$(find bumblebob_simulation)/launch/auto_sim.launch" />
+    <include file='$(find bumblebob_lateral_controller)/launch/load_params.launch'/>
+
+    <node pkg="bumblebob_lateral_controller" type="lat_kin_controller" name="lat_kin_controller" respawn="true" output="screen"/>
+
+    <node pkg="bumblebob_simulation" type = "adapter_node.py" name="adapter_node"/>
+
+
+    <node pkg="bumblebob_navigation" type = "simulation_line_publisher" name="simulation_line_publisher"/>
+
+    <node pkg="bumblebob_navigation" type = "lane_visualizer_node.py" name="lane_visualizer_node"/>
+</launch>
