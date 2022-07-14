@@ -1,0 +1,56 @@
+car:
+
+  inertia:
+    m:        160.0   # Weight of the Vehicle [kg]
+    m_driver: 0.0     # Weight of the driver  [kg]
+    g:        9.81    # Gravity force         [m/s^2]
+    I_z:      110    # Inertial force I_zz 
+
+  kinematics:
+    l: 1.53           # Vehicle Length [m]
+    b_F: 0.764          # From COG to front axle [m]
+    b_R: 0.766         # From COG to rear axle [m]
+    w_front: 0.6    # Percentage of weight front
+    h_cg: 0.285       # Heights of COG [m]
+
+  # Magic Formula:
+  # y=D*sin(C*atan(B*(1-E)*x+E*atan(B*x)))
+  tire:
+    tire_coefficient: 1.0
+    tire_correction: 0.5    # tire correction factor
+    tiredeg: 0.00000605    #tire degression factor
+    sa: 0.01                #slip angle
+    B: 12.56
+    C: -1.38
+    D: 1.60
+    E: -0.58
+    width: 0.3 #TODO: measure
+    mass: 5
+    max_steering: 27      #maximum possible steering angle
+  
+file: 
+  path: "../config/scripts/kinematic_controller.csv"
+
+gains: 
+  lateral: 1.0
+  heading: 1.2
+  delta_dot: 0.3
+
+estimation_area:
+  look_front: 10
+  look_back: 10
+
+publisher:
+  steering: "/bumblebob/steering"
+
+subscriber:
+  states: "gazebo/model_states"
+  raceline: "bumblebob/raceline"
+
+inits:
+  write_csv: True
+  debug_mode: True
+  loop_rate: 20
+
+restrictions: 
+  highest_speed: 40
