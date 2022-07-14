@@ -1,0 +1,15 @@
+<launch>
+    <include file="$(find bumblebob_fssim)/launch/auto_sim.launch" />
+
+    <node pkg="bumblebob_fssim" type = "adapter_node.py" name="adapter_node">
+        <rosparam command="load" file='$(find bumblebob_lateral_lq_controller)/config/lq_config.yaml'/>
+    </node>
+
+    <node pkg="bumblebob_navigation" type = "simulation_line_publisher" name="simulation_line_publisher"/>
+
+    <node pkg="bumblebob_navigation" type = "lane_visualizer_node.py" name="lane_visualizer_node" respawn="true"/>
+
+    <node pkg="bumblebob_lateral_lq_controller" type="lateral_lqr_controller_node.py" name="lateral_lqr_controller_node" output="screen" respawn="true" >
+        <rosparam command="load" file='$(find bumblebob_lateral_lq_controller)/config/lq_config.yaml'/>
+    </node>
+</launch>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>bumblebob_lateral_lq_controller</name>
+  <version>0.0.0</version>
+  <description>The bumblebob_lateral_LQ_controller package: Within this package all navigation related subjects, topics, msgs, and classes will be developed</description>
+
+  <maintainer email="niklas.bubeck@octanes.de">Niklas Bubeck</maintainer>
+
+  <license>MIT</license>
+
+  <author email="niklas.bubeck@octanes.de">Niklas Bubeck</author>
+
+ <buildtool_depend>catkin</buildtool_depend>
+    <build_depend>rostest</build_depend>
+    
+    <depend>bumblebob_msgs</depend>
+    <depend>std_msgs</depend>
+    <depend>sensor_msgs</depend>
+    <depend>gazebo_msgs</depend>
+    <depend>rospy</depend>
+    <exec_depend>bumblebob_description</exec_depend>
+  <test_depend>rosunit</test_depend>
+
+
+  <export>
+  </export>
+</package>

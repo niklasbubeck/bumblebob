@@ -1,0 +1,6 @@
+<launch>
+
+    <node pkg="bumblebob_lateral_lq_controller" type="lateral_lqr_controller_node.py" name="lateral_lqr_controller_node" respawn="true" >
+        <rosparam command="load" file='$(find bumblebob_lateral_lq_controller)/config/lq_config.yaml'/>
+    </node>
+</launch>

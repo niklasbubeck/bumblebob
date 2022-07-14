@@ -1,0 +1,57 @@
+car:
+
+  inertia:
+    m:        160.0   # Weight of the Vehicle [kg]
+    m_driver: 0.0     # Weight of the driver  [kg]
+    g:        9.81    # Gravity force         [m/s^2]
+    I_z:      110    # Inertial force I_zz 
+
+  kinematics:
+    l: 1.53           # Vehicle Length [m]
+    b_F: 0.764          # From COG to front axle [m]
+    b_R: 0.766         # From COG to rear axle [m]
+    w_front: 0.6    # Percentage of weight front
+    h_cg: 0.285       # Heights of COG [m]
+
+  # Magic Formula:
+  # y=D*sin(C*atan(B*(1-E)*x+E*atan(B*x)))
+  tire:
+    tire_coefficient: 1.0
+    tire_correction: 0.5    # tire correction factor
+    tiredeg: 0.00000605     # tire degression factor
+    cf: 18000               # tire stiffness front 
+    cr: 16000               # trie stiffnes back
+    sa: 0.01                # slip angle
+    B: 12.56
+    C: -1.38
+    D: 1.60
+    E: -0.58
+    width: 0.3 #TODO: measure
+    mass: 5
+    max_steering: 27      #maximum possible steering angle
+
+control:
+  #control matrix Q (part of the costfunction) 
+  #we want the best control for minimizing the lateral error
+  Q: 
+    q1: 0.1         #param for the lateral error
+    q2: 0         #param for the change of lateral error 
+    q3: 0         #param for the heading error 
+    q4: 0         #param for the change of the heading error 
+  R: 1            #higher=less sensitive [0,inf)
+  lookahead: 5   #number of points that will be used as preview
+  lookback: 5     #number of points to relativize (see behind the car)
+  
+subscribers:
+  raceline_sub: "/bumblebob/raceline"
+  gazebo_sub: "gazebo/model_states"
+  
+publishers:
+  steering_pub: "bumblebob/steering"
+
+inits:
+  debug_mode: True
+  write_csv: True
+
+file: 
+  path: "/../../doc/lq_control_data.csv"

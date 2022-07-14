@@ -1,0 +1,6 @@
+<launch>
+    <rosparam command="load" file='$(find bumblebob_lateral_lq_controller)/config/lq_config.yaml'/>
+    <test test-name="lateral_lqr_controller_node_test" pkg="bumblebob_lateral_lq_controller" type="test_lateral_lqr_controller_node.py" time-limit="10.0"/> 
+
+    
+</launch>
