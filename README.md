@@ -1,6 +1,6 @@
 # Bumblebob
 
-Software stack of our first autonomous car
+Software stack of our second autonomous car
 
 ## Overview
 
