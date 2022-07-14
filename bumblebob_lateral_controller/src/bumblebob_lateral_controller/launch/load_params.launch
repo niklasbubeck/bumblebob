@@ -1,3 +1,0 @@
-<launch>
-    <rosparam command="load" file='$(find bumblebob_lateral_controller)/config/config.yaml'/>
-</launch>

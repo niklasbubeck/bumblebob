@@ -1,4 +1,0 @@
-<launch>
-    <include file='$(find bumblebob_lateral_controller)/launch/load_params.launch'/>
-    <test test-name="test_feedforward" pkg="bumblebob_lateral_controller" type="test_feedforward" />
-</launch>

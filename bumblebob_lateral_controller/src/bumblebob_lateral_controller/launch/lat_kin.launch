@@ -1,4 +1,0 @@
-<launch>
-    <include file='$(find bumblebob_lateral_controller)/launch/load_params.launch'/>
-    <node pkg="bumblebob_lateral_controller" type="lat_kin_controller" name="lat_kin_controller"/>
-</launch>
