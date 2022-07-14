@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<package format="2">
+    <name>bumblebob_pure_pursuit</name>
+    <version>1.0.0</version>
+    <description>The bumblebob_pure_pursuit package</description>
+
+    <maintainer email="dominik.prossel@octanes.de">Dominik Prossel</maintainer>
+
+    <license>MIT</license>
+
+    <buildtool_depend>catkin</buildtool_depend>
+
+    <exec_depend>bumblebob_msgs</exec_depend>
+    <exec_depend>message_runtime</exec_depend>
+    
+    <depend>roscpp</depend>
+    <depend>geometry_msgs</depend>
+    <depend>std_msgs</depend>
+
+</package>

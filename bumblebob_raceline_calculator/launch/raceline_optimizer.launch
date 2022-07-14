@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="bumblebob_raceline_calculator" type="raceline_optimization" name="raceline_optimization" respawn="true" output="screen">
+        <rosparam command="load" file='$(find bumblebob_raceline_calculator)/config/config.yaml'/>
+    </node>
+</launch>

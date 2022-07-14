@@ -1,0 +1,51 @@
+general: 
+  write_csv: True                                     # Defines if the data will be saved to doc/filepath.csv
+  file_path: "../doc/raceline_optimizer.csv"          # Defines the place to save the file
+
+publishers:                                           # Publisher topics
+  pub_raceline: "/bumblebob/raceline"
+  pub_velocity_profile: "/bumblebob/velocity_profile"
+subscribers:                                          # Subscriber topics
+  sub_map: "/bumblebob/map"
+  sub_reference: "/bumblebob/reference"
+
+optimizer:                                            
+  vehicle_width: 1                                    # Width of the Vehicle
+  ppm: 20                                             # (Points per meter) defines the density of the spline
+  max_displacement: 1.3                               # The maximum displacement in each direction
+  dp_factor: 0.5                                      # The initial displacement factor
+  smoothing_strength: 30                              # Defines how many points will be used for smoothing
+  initial_time_current: 1000                          # The initial values (adaptable because of different maps)
+  initial_time_before: 2000
+  initial_accel_current: 300000
+  initial_accel_before: 51000000
+  loop: 1                                             # How often the optimization algorithm is applied
+  counter: 50                                         # How many iteration the algorithm makes
+  increaser: 4.5                                      # Increases the displacement factor again 
+  decreaser: 0.2                                      # Decreases the displacement factor again
+                  ### increaser * decreaser !< 1 ###
+profiles: 
+  look_ahead: 2                                       # How many points ahead will be used for the curvature calculation
+  look_back: 2                                        # How many points behind will be used for the curvature calculation
+  friction: 0.9                                       # Friction between rubber and asphalt
+  gravity: 9.81                                       # Gravity 
+  max_acceleration: 2000                              # Maximum Acceleration Force 
+  max_deceleration: 2000                              # Maximum Deceleration Force
+  mass: 160                                           # Mass of the vehicle
+
+
+###############################################
+#                                             #
+#             Under Construction              #
+#                                             #
+###############################################
+
+states: 
+  length: 1.53
+  weight_front: 0.6
+  weight_rear: 0.4
+  inertia: 110
+  tire_coefficient: 1.0
+  tire_correction: 0.5
+  tire_degression: 0.00000605
+  slip_angle: 0.01

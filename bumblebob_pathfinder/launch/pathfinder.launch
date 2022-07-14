@@ -1,0 +1,4 @@
+<launch>
+    <rosparam command="load" file='$(find bumblebob_pathfinder)/config/pathfinder.yaml'/>
+    <node pkg= "bumblebob_pathfinder" type="bumblebob_pathfinder" name="pathfinder" output="screen" respawn="true"/>
+</launch>

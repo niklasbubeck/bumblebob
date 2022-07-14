@@ -1,0 +1,6 @@
+path_topic: /bumblebob/best_path
+steering_topic: /bumblebob/target/steering
+target_point_topic: /pathfinder/target_point
+distance_threshold: 0.15  # average deviation from line
+
+target_distance: 5.0 # minimal distance of the target point in meters

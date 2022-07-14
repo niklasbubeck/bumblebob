@@ -1,0 +1,32 @@
+pathfinder:
+
+  params:
+    car_position_x: .0
+    car_position_y: .0
+    section_length: 3
+    section_stride: 3
+    segment_max_len: 5.0
+    seg_seg_min_angle: 105
+    same_type_limit: 1
+    default_bias: 0
+    finish_line_trigger_radius: 4.0
+    finish_line_trigger_corridor: 1.5
+    target_distance_min: 3.0
+    target_distance_max: 10.0
+    target_distance_falloff: 4.0
+    target_distance_scaler: 2.0
+    prev_target_dist_influence: 0.95
+  
+  topics:
+      pub:
+        path: "/pathfinder/best_path"
+        target: "/pathfinder/target_point"
+        finish_line_signal: "/pathfinder/finish_line_stop_signal"
+        cone_mesh_marker: "/pathfinder/cone_mesh_marker"
+        path_mesh_marker: "/pathfinder/path_mesh_marker"
+        best_path_marker: "/pathfinder/best_path_marker"
+      sub:
+        bias: "/pathfinder/bias"
+        cones: "/sensorfusion/cone_pos"
+  links:
+    base_link: "base_link"

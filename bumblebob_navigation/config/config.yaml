@@ -1,0 +1,7 @@
+laneAdaption:
+  frequency: 10 
+  look_front: 10 
+  ppm: 30 
+  strength: 3 
+  car_length_: 1.53
+  model_type: "linear"

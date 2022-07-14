@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>bumblebob_navigation</name>
+  <version>0.0.0</version>
+  <description>The bumblebob_navigation package: Within this package all navigation related subjects, topics, msgs, and classes will be developed</description>
+
+  <maintainer email="niklas.bubeck@octanes.de">Niklas Bubeck</maintainer>
+
+  <license>MIT</license>
+
+  <author email="niklas.bubeck@octanes.de">Niklas Bubeck</author>
+  <author email="christian.zoellner@octanes.de">Christian Zoellner</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rostest</build_depend>
+  <build_depend>libopencv-dev</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>bumblebob_msgs</build_depend>
+
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+  <build_export_depend> geometry_msgs</build_export_depend>
+  
+  
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>rospy</exec_depend>
+
+  <exec_depend>message_runtime</exec_depend>
+  
+
+
+  <export>
+  </export>
+</package>

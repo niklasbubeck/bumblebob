@@ -1,0 +1,8 @@
+<launch>
+    <arg name="config" default="default"/>
+    <!-- Launch Fastslam Node -->
+    <node pkg="bumblebob_pure_pursuit" type="bumblebob_pure_pursuit" name="pure_pursuit_controller" output="screen" respawn="true">
+      <rosparam command="load" file="$(find bumblebob_pure_pursuit)/config/$(arg config).yaml" />
+    </node>
+  
+  </launch>

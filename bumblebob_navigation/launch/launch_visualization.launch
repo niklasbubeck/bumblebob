@@ -1,0 +1,7 @@
+<launch>
+    <node pkg="bumblebob_navigation" type="raceline_publisher" name="raceline_publisher">
+    <rosparam command="load" file='$(find bumblebob_description)/config/car.yaml'/>
+    </node>
+
+    <node pkg="bumblebob_navigation" type = "lane_visualizer_node.py" name="lane_visualizer_node"/>
+</launch>

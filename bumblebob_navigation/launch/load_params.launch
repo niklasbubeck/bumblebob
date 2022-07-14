@@ -1,0 +1,3 @@
+<launch>
+    <rosparam command = "load" file='$(find bumblebob_navigation)/config/config.yaml' />
+</launch>
